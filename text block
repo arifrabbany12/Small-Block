@@ -1,0 +1,223 @@
+{% if block.settings.enable_block %}
+  <div class="block-container" style="
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.padding }};
+    margin: {{ block.settings.margin }};
+    height: {{ block.settings.height }};
+    width: {{ block.settings.width }};
+    position: {{ block.settings.position }};
+    top: {{ block.settings.top }};
+    right: {{ block.settings.right }};
+    bottom: {{ block.settings.bottom }};
+    left: {{ block.settings.left }};
+  ">
+      <h2 style="text-align: {{ block.settings.title_text_align }}; font-weight: {{ block.settings.title_font_weight }}; text-decoration: {{ block.settings.title_text_decoration }}; font-size: {{ block.settings.title_font_size }}px; font-family: {{ block.settings.title_font_family }}; color: {{ block.settings.title_font_color }};">
+          {{ block.settings.block_title }}
+      </h2>
+      <p style="text-align: {{ block.settings.content_text_align }}; font-weight: {{ block.settings.content_font_weight }}; text-decoration: {{ block.settings.content_text_decoration }}; font-size: {{ block.settings.content_font_size }}px; font-family: {{ block.settings.content_font_family }}; color: {{ block.settings.content_font_color }};">
+          {{ block.settings.block_content }}
+      </p>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Toggleable Block",
+  "target": "section",
+  "settings": [
+      {
+          "type": "checkbox",
+          "id": "enable_block",
+          "label": "Enable Block",
+          "default": false
+      },
+      {
+          "type": "text",
+          "id": "block_title",
+          "label": "Block Title",
+          "default": "Title Here"
+      },
+      {
+          "type": "textarea",
+          "id": "block_content",
+          "label": "Block Content",
+          "default": "Content Here"
+      },
+      {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color",
+          "default": "#ffffff"
+      },
+      {
+          "type": "text",
+          "id": "padding",
+          "label": "Padding",
+          "default": "10px"
+      },
+      {
+          "type": "text",
+          "id": "margin",
+          "label": "Margin",
+          "default": "10px"
+      },
+      {
+          "type": "text",
+          "id": "height",
+          "label": "Height",
+          "default": "auto"
+      },
+      {
+          "type": "text",
+          "id": "width",
+          "label": "Width",
+          "default": "auto"
+      },
+      {
+          "type": "select",
+          "id": "position",
+          "label": "Position",
+          "options": [
+              {"value": "static", "label": "Static"},
+              {"value": "relative", "label": "Relative"},
+              {"value": "absolute", "label": "Absolute"},
+              {"value": "fixed", "label": "Fixed"},
+              {"value": "sticky", "label": "Sticky"}
+          ],
+          "default": "static"
+      },
+      {
+          "type": "text",
+          "id": "top",
+          "label": "Top",
+          "default": "auto"
+      },
+      {
+          "type": "text",
+          "id": "right",
+          "label": "Right",
+          "default": "auto"
+      },
+      {
+          "type": "text",
+          "id": "bottom",
+          "label": "Bottom",
+          "default": "auto"
+      },
+      {
+          "type": "text",
+          "id": "left",
+          "label": "Left",
+          "default": "auto"
+      },
+      {
+          "type": "header",
+          "content": "Title Style"
+      },
+      {
+          "type": "select",
+          "id": "title_text_align",
+          "label": "Title Text Align",
+          "options": [
+              {"value": "left", "label": "Left"},
+              {"value": "center", "label": "Center"},
+              {"value": "right", "label": "Right"}
+          ],
+          "default": "left"
+      },
+      {
+          "type": "select",
+          "id": "title_font_weight",
+          "label": "Title Font Weight",
+          "options": [
+              {"value": "normal", "label": "Normal"},
+              {"value": "bold", "label": "Bold"}
+          ],
+          "default": "normal"
+      },
+      {
+          "type": "select",
+          "id": "title_text_decoration",
+          "label": "Title Text Decoration",
+          "options": [
+              {"value": "none", "label": "None"},
+              {"value": "underline", "label": "Underline"},
+              {"value": "line-through", "label": "Line Through"}
+          ],
+          "default": "none"
+      },
+      {
+          "type": "text",
+          "id": "title_font_size",
+          "label": "Title Font Size (px)",
+          "default": "24"
+      },
+      {
+          "type": "text",
+          "id": "title_font_family",
+          "label": "Title Font Family",
+          "default": "Arial, sans-serif"
+      },
+      {
+          "type": "color",
+          "id": "title_font_color",
+          "label": "Title Font Color",
+          "default": "#000000"
+      },
+      {
+          "type": "header",
+          "content": "Content Style"
+      },
+      {
+          "type": "select",
+          "id": "content_text_align",
+          "label": "Content Text Align",
+          "options": [
+              {"value": "left", "label": "Left"},
+              {"value": "center", "label": "Center"},
+              {"value": "right", "label": "Right"}
+          ],
+          "default": "left"
+      },
+      {
+          "type": "select",
+          "id": "content_font_weight",
+          "label": "Content Font Weight",
+          "options": [
+              {"value": "normal", "label": "Normal"},
+              {"value": "bold", "label": "Bold"}
+          ],
+          "default": "normal"
+      },
+      {
+          "type": "select",
+          "id": "content_text_decoration",
+          "label": "Content Text Decoration",
+          "options": [
+              {"value": "none", "label": "None"},
+              {"value": "underline", "label": "Underline"},
+              {"value": "line-through", "label": "Line Through"}
+          ],
+          "default": "none"
+      },
+      {
+          "type": "text",
+          "id": "content_font_size",
+          "label": "Content Font Size (px)",
+          "default": "16"
+      },
+      {
+          "type": "text",
+          "id": "content_font_family",
+          "label": "Content Font Family",
+          "default": "Arial, sans-serif"
+      },
+      {
+          "type": "color",
+          "id": "content_font_color",
+          "label": "Content Font Color",
+          "default": "#000000"
+      }
+  ]
+}
+{% endschema %}
