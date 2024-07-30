@@ -1,0 +1,227 @@
+{% schema %}
+{
+  "name": "Main Title Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title",
+      "default": "Your Main Title Here"
+    },
+    {
+      "type": "color",
+      "id": "main_title_color",
+      "label": "Main Title Color",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "text_align_title",
+      "label": "Main Title Text Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "font_size_title",
+      "label": "Main Title Font Size",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "select",
+      "id": "font_weight_title",
+      "label": "Main Title Font Weight",
+      "options": [
+        {
+          "value": "100",
+          "label": "Thin"
+        },
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "600",
+          "label": "Semi-Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "900",
+          "label": "Heavy"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_title",
+      "label": "Main Title Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_title",
+      "label": "Main Title Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "text",
+      "id": "paragraph_text",
+      "label": "Paragraph Text",
+      "default": "This is a paragraph below the main title."
+    },
+    {
+      "type": "color",
+      "id": "paragraph_color",
+      "label": "Paragraph Color",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "text_align_paragraph",
+      "label": "Paragraph Text Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "font_size_paragraph",
+      "label": "Paragraph Font Size",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "font_weight_paragraph",
+      "label": "Paragraph Font Weight",
+      "options": [
+        {
+          "value": "100",
+          "label": "Thin"
+        },
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "600",
+          "label": "Semi-Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "900",
+          "label": "Heavy"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_paragraph",
+      "label": "Paragraph Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_paragraph",
+      "label": "Paragraph Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<div
+  class="main-title"
+  style="color: {{ section.settings.main_title_color }}; text-align: {{ section.settings.text_align_title }}; font-size: {{ section.settings.font_size_title }}px; font-weight: {{ section.settings.font_weight_title }}; padding-top: {{ section.settings.padding_top_title }}px; padding-bottom: {{ section.settings.padding_bottom_title }}px;"
+>
+  {{ section.settings.main_title }}
+</div>
+
+<p
+  style="color: {{ section.settings.paragraph_color }}; text-align: {{ section.settings.text_align_paragraph }}; font-size: {{ section.settings.font_size_paragraph }}px; font-weight: {{ section.settings.font_weight_paragraph }}; padding-top: {{ section.settings.padding_top_paragraph }}px; padding-bottom: {{ section.settings.padding_bottom_paragraph }}px;"
+>
+  {{ section.settings.paragraph_text }}
+</p>
+
+<style>
+  .main-title {
+    font-family: Bricolage Grotesque, sans-serif;
+    line-height: 1.2;
+    margin-bottom: 10px; /* Adjust as needed */
+    box-sizing: border-box; /* Ensures padding does not affect element's overall size */
+  }
+
+  p {
+    box-sizing: border-box; /* Ensures padding does not affect element's overall size */
+  }
+</style>
